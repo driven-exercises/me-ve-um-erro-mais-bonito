@@ -7,14 +7,14 @@ async function getSentences(req, res) {
 }
 
 async function getSentence(req, res) {
-  const { id } = req.params; // FIXME: Tratar caso onde o id não é um número inteiro positivo
+  const { id } = req.params; // FIXME (1): Tratar caso onde o id não é um número inteiro positivo
   const sentences = sentencesService.getSentence(parseInt(id));
   res.send(sentences);
 }
 
 async function createSentence(req, res) {
   const { body } = req;
-  const { author, sentence } = body; // FIXME: Tratar caso onde os valores não são preenchidos (ou vazios)
+  const { author, sentence } = body; // FIXME (3): Tratar caso onde os valores não são preenchidos (ou vazios)
 
   sentencesService.createSentence(author, sentence);
   res.sendStatus(httpStatus.CREATED);

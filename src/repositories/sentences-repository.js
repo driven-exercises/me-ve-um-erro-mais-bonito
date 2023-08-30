@@ -9,9 +9,7 @@ function getSentenceById(id) {
 }
 
 function getSentence(targetSentence) {
-  return sentences.find(({ sentence }) => {
-    sentence === targetSentence
-  });
+  return sentences.find(({ sentence }) => sentence === targetSentence);
 }
 
 function createSentence(author, sentence) {
